@@ -1,6 +1,5 @@
 filetype plugin indent on
 syntax on
-colorscheme wombat256
 
 let mapleader=","
 
@@ -38,3 +37,6 @@ autocmd FileType javascript set tabstop=4|set shiftwidth=4|set expandtab
 let g:CommandTMaxHeight = 20
 let g:CommandTCancelMap=['<C-x>', '<C-c>']
 let g:CommandTWildIgnore=&wildignore . ",**/build/*,**/node_modules/*,**/public/attachments/*"
+
+colorscheme wombat256 
+set background=dark
