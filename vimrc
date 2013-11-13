@@ -19,7 +19,7 @@ set hlsearch
 set incsearch
 set lazyredraw
 set magic
-set wildignore+=*.o,*.class,*~,*.git,*.hi,*.jpg,*.png,*.svg
+set wildignore+=*.o,*.obj,*.so,*.class,*~,*.git,*.hi,*.jpg,*.png,*.svg,*.jpeg
 set showmatch
 set mat=2
 set nobackup
@@ -35,4 +35,6 @@ autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType haskell set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType javascript set tabstop=4|set shiftwidth=4|set expandtab
 
-
+let g:CommandTMaxHeight = 20
+let g:CommandTCancelMap=['<C-x>', '<C-c>']
+let g:CommandTWildIgnore=&wildignore . ",**/build/*,**/node_modules/*,**/public/attachments/*"
