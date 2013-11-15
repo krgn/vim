@@ -6,6 +6,7 @@ syntax on
 let mapleader=","
 
 set omnifunc=syntaxcomplete#Complete
+set laststatus=2
 
 set backupdir=~/.vim/backup,/tmp,./.backup
 set directory=~/.vim/backup,./,/tmp,./.backup
@@ -48,6 +49,15 @@ set viminfo^=%
 let g:CommandTMaxHeight = 20
 let g:CommandTCancelMap=['<C-x>', '<C-c>', '<esc>']
 let g:CommandTWildIgnore=&wildignore . ",**/build/*,**/node_modules/*,**/public/attachments/*"
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+let g:airline_left_sep = ''         
+let g:airline_right_sep = '' 
+let g:airline_theme = 'wombat'
+
 
 colorscheme wombat256 
 set background=dark
