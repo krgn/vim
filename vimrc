@@ -1,3 +1,5 @@
+execute pathogen#infect()
+
 filetype plugin indent on
 syntax on
 
@@ -36,7 +38,7 @@ autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType haskell set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType javascript set tabstop=4|set shiftwidth=4|set expandtab
 
-" {{{ Remember info about open buffers on close
+" Restore last used position {{{ 
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
                     \   exe "normal! g`\"" |
                     \ endif
@@ -44,8 +46,9 @@ set viminfo^=%
 " }}}
 
 let g:CommandTMaxHeight = 20
-let g:CommandTCancelMap=['<C-x>', '<C-c>']
+let g:CommandTCancelMap=['<C-x>', '<C-c>', '<esc>']
 let g:CommandTWildIgnore=&wildignore . ",**/build/*,**/node_modules/*,**/public/attachments/*"
 
 colorscheme wombat256 
 set background=dark
+
