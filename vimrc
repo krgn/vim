@@ -29,6 +29,8 @@ set nowb
 set noswapfile
 set showtabline=2
 set clipboard=unnamedplus
+set ttimeout
+set ttimeoutlen=50
 
 set ai "Auto indent
 set si "Smart indent
