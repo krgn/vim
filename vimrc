@@ -49,8 +49,8 @@ set viminfo^=%
 " }}}
 
 let g:CommandTMaxHeight = 20
-let g:CommandTCancelMap=['<C-x>', '<C-c>', '<esc>']
-let g:CommandTWildIgnore=&wildignore . ",**/build/*,**/node_modules/*,**/public/attachments/*"
+let g:CommandTCancelMap=['<esc>']
+let g:CommandTWildIgnore=&wildignore . ",**/build/*,**/node_modules/*,**/public/attachments/*,TAGS"
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
