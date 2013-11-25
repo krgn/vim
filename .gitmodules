@@ -15,3 +15,9 @@
 	url = git://github.com/tpope/vim-commentary.git
     ignore = dirty
 
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule "bundle/javascript"]
+	path = bundle/javascript
+	url = https://github.com/pangloss/vim-javascript.git

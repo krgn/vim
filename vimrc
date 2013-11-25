@@ -1,3 +1,13 @@
+let g:pathogen_disabled = []
+
+function! ReadExcludes()
+   if filereadable(".excludes")
+       source .excludes
+   endif
+endfunction
+
+call ReadExcludes()
+
 execute pathogen#infect()
 
 filetype plugin indent on
@@ -5,6 +15,7 @@ syntax on
 
 let mapleader=","
 
+set complete+=kspell
 set omnifunc=syntaxcomplete#Complete
 set laststatus=2
 
@@ -42,6 +53,10 @@ autocmd FileType ruby set tabstop=2|set shiftwidth=2
 autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType haskell set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType javascript set tabstop=4|set shiftwidth=4|set expandtab
+autocmd FileType gitcommit setlocal spell
+autocmd FileType mail setlocal spell
+autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd BufRead,BufNewFile *.txt setlocal spell
 
 " Restore last used position {{{ 
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -49,6 +64,10 @@ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
                     \ endif
 set viminfo^=%
 " }}}
+
+" just use bash, whatevva..
+set shell=/bin/bash\ -i
+let g:syntastic_check_on_open=1
 
 let g:CommandTMaxHeight = 20
 let g:CommandTCancelMap=['<esc>']
