@@ -37,6 +37,8 @@ set showmatch
 set mat=2
 set nobackup
 set nowb
+set nowrap
+set textwidth=0 wrapmargin=0
 set noswapfile
 set showtabline=2
 set clipboard=unnamedplus
@@ -66,9 +68,10 @@ set viminfo^=%
 set shell=/bin/bash\ -i
 let g:syntastic_check_on_open=1
 
+let g:CommandTMaxCachedDirectories = 5
 let g:CommandTMaxHeight = 20
 let g:CommandTCancelMap=['<esc>']
-let g:CommandTWildIgnore=&wildignore . ",**/build/*,**/node_modules/*,**/public/attachments/*,TAGS"
+let g:CommandTWildIgnore=&wildignore . ",**/build/*,**/node_modules/*,**/public/attachments,**/public/test_attachments,TAGS"
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
