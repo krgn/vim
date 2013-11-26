@@ -43,16 +43,13 @@ set clipboard=unnamedplus
 set ttimeout
 set ttimeoutlen=50
 
-set ai "Auto indent
-set si "Smart indent
-set wrap "Wrap lines
-
 command ClearSearch let @/=""
 
-autocmd FileType ruby set tabstop=2|set shiftwidth=2
-autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
-autocmd FileType haskell set tabstop=4|set shiftwidth=4|set expandtab
-autocmd FileType javascript set tabstop=4|set shiftwidth=4|set expandtab
+autocmd FileType ruby       set tabstop=2 | set shiftwidth=2
+autocmd FileType javascript set tabstop=2 | set shiftwidth=2
+autocmd FileType haskell    set tabstop=4 | set shiftwidth=4
+autocmd FileType java       set tabstop=4 | set shiftwidth=4
+
 autocmd FileType gitcommit setlocal spell
 autocmd FileType mail setlocal spell
 autocmd BufRead,BufNewFile *.md setlocal spell
