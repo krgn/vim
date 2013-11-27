@@ -1,9 +1,7 @@
-let g:pathogen_disabled = []
-
-function! ReadExcludes()
-   if filereadable(".excludes")
-       source .excludes
-   endif
+function! ReadExcludes() 
+if filereadable("./.vim-profile")
+    source ./.vim-profile
+endif
 endfunction
 
 call ReadExcludes()
@@ -25,20 +23,21 @@ set directory=~/.vim/backup,./,/tmp,./.backup
 set expandtab
 set tabstop=4
 set shiftwidth=4
-set wildmenu
 set ignorecase
 set smartcase
 set hlsearch
 set incsearch
 set lazyredraw
 set magic
-set wildignore+=*.o,*.obj,*.so,*.class,*~,*.git,*.hi,*.jpg,*.png,*.svg,*.jpeg
+set wildignore+=*.o,*.obj,*.so,*.class,*~,*.git,*.hi,*.jpg,*.png,*.svg,*.jpeg,*.gif
+set wildmenu
+set wildmode=list:longest
 set showmatch
 set mat=2
 set nobackup
 set nowb
-set nowrap
 set textwidth=0 wrapmargin=0
+set nowrap
 set noswapfile
 set showtabline=2
 set clipboard=unnamedplus
@@ -81,8 +80,11 @@ let g:airline_powerline_fonts=0
 let g:airline_left_sep = '' 
 let g:airline_right_sep = ''
 
-let g:airline_theme = 'wombat'
+let g:airline_theme = 'molokai'
 
-colorscheme wombat256 
+let g:rehash256=1
 set background=dark
+
+colorscheme molokai
+
 
