@@ -1,3 +1,5 @@
+set nocompatible
+
 function! ReadExcludes() 
 if filereadable("./.vim-profile")
     source ./.vim-profile
@@ -67,6 +69,12 @@ set viminfo^=%
 set shell=/bin/bash\ -i
 let g:syntastic_check_on_open=1
 
+nnoremap <leader>f :CtrlP<CR>
+nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>m :CtrlPMRUFiles<CR>
+nnoremap <leader>t :CtrlPTag<CR>
+
+let g:crtlp_map='<F11>'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$'
