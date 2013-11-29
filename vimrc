@@ -29,7 +29,7 @@ set hlsearch
 set incsearch
 set lazyredraw
 set magic
-set wildignore+=*.o,*.obj,*.so,*.class,*~,*.git,*.hi,*.jpg,*.png,*.svg,*.jpeg,*.gif
+set wildignore+=*.o,*.obj,*.so,*.class,*~,*.git,*.hi,*.jpg,*.png,*.svg,*.jpeg,*.gif,.git,.hg,.svn,*/public/attachments/*
 set wildmenu
 set wildmode=list:longest
 set showmatch
@@ -67,10 +67,10 @@ set viminfo^=%
 set shell=/bin/bash\ -i
 let g:syntastic_check_on_open=1
 
-let g:CommandTMaxCachedDirectories = 5
-let g:CommandTMaxHeight = 20
-let g:CommandTCancelMap=['<esc>']
-let g:CommandTWildIgnore=&wildignore . ",**/build/*,**/node_modules/*,**/public/attachments,**/public/test_attachments,TAGS"
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$'
+  \ }
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
