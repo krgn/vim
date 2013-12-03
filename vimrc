@@ -31,7 +31,7 @@ set hlsearch
 set incsearch
 set lazyredraw
 set magic
-set wildignore+=*.o,*.obj,*.so,*.class,*~,*.git,*.hi,*.jpg,*.png,*.svg,*.jpeg,*.gif,.git,.hg,.svn,*/public/attachments/*
+set wildignore+=*.o,*.obj,*.so,*.class,*~,*.git,*.hi,*.jpg,*.png,*.svg,*.jpeg,*.gif,.git,.hg,.svn,TAGS,*/public/attachments/*,*/vendor/*
 set wildmenu
 set wildmode=list:longest
 set showmatch
@@ -57,7 +57,7 @@ autocmd FileType gitcommit setlocal spell
 autocmd FileType mail setlocal spell
 autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd BufRead,BufNewFile *.txt setlocal spell
-
+autocmd QuickFixCmdPost *grep* cwindow
 " Restore last used position {{{ 
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
                     \   exe "normal! g`\"" |
