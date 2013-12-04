@@ -31,7 +31,7 @@ set hlsearch
 set incsearch
 set lazyredraw
 set magic
-set wildignore+=*.o,*.obj,*.so,*.class,*~,*.git,*.hi,*.jpg,*.png,*.svg,*.jpeg,*.gif,.git,.hg,.svn,TAGS,*/public/attachments/*,*/vendor/*
+set wildignore+=*.o,*.obj,*.so,*.class,*~,*/.git,*.hi,*.jpg,*.png,*.svg,*.jpeg,*.gif,,*/.hg,*/.svn,TAGS,*/public/attachments/*,*/vendor/*
 set wildmenu
 set wildmode=list:longest
 set showmatch
@@ -74,11 +74,22 @@ nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>m :CtrlPMRUFiles<CR>
 nnoremap <leader>t :CtrlPTag<CR>
 
+
+" silver searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
 let g:crtlp_map='<F11>'
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$'
-  \ }
+let g:crtlp_max_files=0
+let g:ctrlp_max_depth=40 
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -87,7 +98,6 @@ endif
 let g:airline_powerline_fonts=0
 let g:airline_left_sep = '' 
 let g:airline_right_sep = ''
-
 let g:airline_theme = 'molokai'
 
 let g:rehash256=1
