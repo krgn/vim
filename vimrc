@@ -84,21 +84,16 @@ nnoremap <leader>m :CtrlPMRUFiles<CR>
 nnoremap <leader>t :CtrlPTag<CR>
 
 
+let g:crtlp_map='<F11>'
+
 " silver searcher
 if executable('ag')
-  " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+  let g:crtlp_max_files=20000
+  let g:ctrlp_max_depth=40 
   let g:ctrlp_use_caching = 0
 endif
-
-let g:crtlp_map='<F11>'
-let g:crtlp_max_files=0
-let g:ctrlp_max_depth=40 
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
