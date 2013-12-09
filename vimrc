@@ -31,9 +31,6 @@ set hlsearch
 set incsearch
 set lazyredraw
 set magic
-set wildignore+=*.o,*.obj,*.so,*.class,*~,*/.git,*.hi,*.jpg,*.png,*.svg,*.jpeg,*.gif,,*/.hg,*/.svn,TAGS,*/public/attachments/*,*/vendor/*
-set wildmenu
-set wildmode=list:longest
 set showmatch
 set mat=2
 set nobackup
@@ -45,6 +42,16 @@ set showtabline=2
 set clipboard=unnamedplus
 set ttimeout
 set ttimeoutlen=50
+
+if has("wildmenu")
+    set wildignore+=*.a,*.o
+    set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
+    set wildignore+=.DS_Store,.git,.hg,.svn
+    set wildignore+=*~,*.swp,*.tmp
+    set wildignore+=*/attachments/*,*/vendor*,*/node_modules/*
+    set wildmenu
+    set wildmode=longest,list
+endif
 
 command ClearSearch let @/=""
 
