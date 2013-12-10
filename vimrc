@@ -75,6 +75,7 @@ set viminfo^=%
 " just use bash, whatevva..
 set shell=/bin/bash\ -i
 let g:syntastic_always_populate_loc_list=1
+let g:syntastic_ruby_exec = '~/.rbenv/shims/ruby'
 let g:syntastic_javascript_checkers=['jslint']
 let g:syntastic_check_on_open=1
 
