@@ -84,8 +84,8 @@ nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>m :CtrlPMRUFiles<CR>
 nnoremap <leader>t :CtrlPTag<CR>
 
-
 let g:crtlp_map='<F11>'
+let g:ctrlp_working_path_mode = '0'
 
 " silver searcher
 if executable('ag')
@@ -96,18 +96,7 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-let g:airline_powerline_fonts=0
-let g:airline_left_sep = '' 
-let g:airline_right_sep = ''
-let g:airline_theme = 'molokai'
-
-let g:rehash256=1
-set background=dark
-
 colorscheme molokai
+set background=dark
 
 

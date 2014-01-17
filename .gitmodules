@@ -2,15 +2,10 @@
 	path = bundle/surround
 	url = https://github.com/tpope/vim-surround.git
     ignore = dirty
-[submodule "bundle/airline"]
-	path = bundle/airline
-	url = https://github.com/bling/vim-airline.git
-    ignore = dirty
 [submodule "bundle/commentary"]
 	path = bundle/commentary
 	url = git://github.com/tpope/vim-commentary.git
     ignore = dirty
-
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
