@@ -99,9 +99,8 @@ endif
 "" disable the annoying help thingy
 nmap <F1> <nop>
 imap <F1> <nop>
-map <F1> <nop>
+map  <F1> <nop>
 
-colorscheme molokai
+colorscheme monokai
 set background=dark
-
-
+hi Search ctermfg=28
