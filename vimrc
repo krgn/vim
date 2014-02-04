@@ -8,7 +8,7 @@ endfunction
 
 call ReadExcludes()
 
-let g:pathogen_disabled = ['eclim', 'rename', 'rbenv', 'airline']
+let g:pathogen_disabled = ['eclim', 'rbenv']
 
 execute pathogen#infect()
 
@@ -105,5 +105,5 @@ imap <F1> <nop>
 map  <F1> <nop>
 
 colorscheme monokai
-set background=dark
 hi Search ctermfg=28
+set background=dark
