@@ -8,6 +8,8 @@ endfunction
 
 call ReadExcludes()
 
+let g:pathogen_disabled = ['eclim', 'rename', 'rbenv', 'airline']
+
 execute pathogen#infect()
 
 filetype plugin indent on
@@ -58,6 +60,7 @@ command ClearSearch let @/=""
 autocmd FileType ruby       set tabstop=2 | set shiftwidth=2
 autocmd FileType javascript set tabstop=2 | set shiftwidth=2
 autocmd FileType haskell    set tabstop=4 | set shiftwidth=4
+autocmd FileType haskell    set omnifunc=necoghc#omnifunc
 autocmd FileType java       set tabstop=4 | set shiftwidth=4
 
 autocmd FileType gitcommit setlocal spell
@@ -76,7 +79,7 @@ set viminfo^=%
 set shell=/bin/bash\ -i
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_ruby_exec = '~/.rbenv/shims/ruby'
-let g:syntastic_javascript_checkers=['jslint']
+" let g:syntastic_javascript_checkers=['jslint']
 let g:syntastic_check_on_open=1
 
 nnoremap <leader>f :CtrlP<CR>
