@@ -96,6 +96,11 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
+"" disable the annoying help thingy
+nmap <F1> <nop>
+imap <F1> <nop>
+map <F1> <nop>
+
 colorscheme molokai
 set background=dark
 
