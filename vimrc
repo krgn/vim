@@ -8,7 +8,7 @@ endfunction
 
 call ReadExcludes()
 
-let g:pathogen_disabled = ['eclim', 'rbenv']
+let g:pathogen_disabled = ['syntastic', 'rbenv']
 
 execute pathogen#infect()
 
@@ -29,6 +29,7 @@ set tabstop=4
 set shiftwidth=4
 set ignorecase
 set smartcase
+set smartindent
 set hlsearch
 set incsearch
 set lazyredraw
@@ -81,6 +82,8 @@ let g:syntastic_always_populate_loc_list=1
 let g:syntastic_ruby_exec = '~/.rbenv/shims/ruby'
 " let g:syntastic_javascript_checkers=['jslint']
 let g:syntastic_check_on_open=1
+let g:syntastic_java_javac_config_file_enabled=0
+let g:syntastic_disabled_filetypes=['javac']
 
 nnoremap <leader>f :CtrlP<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
@@ -105,5 +108,5 @@ imap <F1> <nop>
 map  <F1> <nop>
 
 colorscheme monokai
-hi Search ctermfg=28
 set background=dark
+hi Search ctermfg=28 ctermbg=232
