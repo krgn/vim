@@ -7,9 +7,6 @@ endif
 endfunction
 
 call ReadExcludes()
-
-let g:pathogen_disabled = ['syntastic', 'rbenv']
-
 execute pathogen#infect()
 
 filetype plugin indent on
